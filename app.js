@@ -23,7 +23,7 @@ function createBoard() {
         square.innerHTML = startPiece
         square.firstChild?.setAttribute('draggable', true)
         square.setAttribute('square-id', i)
-        const row = Math.floor(63 - i / 8) + 1
+        const row = Math.floor((63 - i) / 8) + 1
         if (row % 2 === 0) {
             square.classList.add(i % 2 === 0 ? "beige" : "brown")
         } else {
@@ -43,7 +43,7 @@ function createBoard() {
 }
 createBoard()
 
-const allSquares = document.querySelectorAll("#.square")
+const allSquares = document.querySelectorAll("#gameboard .square")
 
 allSquares.forEach(square => {
     square.addEventListener('dragstart', dragStart)
